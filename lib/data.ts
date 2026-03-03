@@ -289,8 +289,8 @@ export const companyInfo = {
   tagline: "Next-Level Solutions.",
   description:
     "We build advanced websites, client portals, admin dashboards, cloud-based systems, and mobile applications that drive business growth.",
-  email: "hello@gnariex.com",
-  phone: "+1 (555) 000-1234",
+  email: "info@gnariex.com",
+  phone: "+63 956 043 1217",
   socials: {
     twitter: "https://twitter.com/gnariex",
     linkedin: "https://linkedin.com/company/gnariex",

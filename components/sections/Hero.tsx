@@ -47,7 +47,7 @@ export default function Hero() {
             className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary md:text-xl"
           >
             We build advanced websites, client portals, cloud-based systems,
-            and admin dashboards that drive your business forward.
+            mobile apps, and admin dashboards that drive your business forward.
           </motion.p>
 
           {/* CTAs */}
