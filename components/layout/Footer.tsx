@@ -1,51 +1,21 @@
 import Link from "next/link";
-import { FaXTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import { HiOutlineEnvelope, HiOutlinePhone } from "react-icons/hi2";
 import { companyInfo, navLinks, services } from "@/lib/data";
 import GradientLogo from "@/components/ui/GradientLogo";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-surface/50">
+    <footer className="overflow-hidden border-t border-border bg-surface/50">
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 overflow-hidden md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="min-w-0 space-y-1">
             <Link href="/" aria-label="Gnariex Home">
               <GradientLogo />
             </Link>
             <p className="text-sm font-medium text-text-primary">
               Next-Level Solutions.
             </p>
-            <div className="flex gap-3">
-              <a
-                href={companyInfo.socials.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text-secondary transition-all hover:border-primary hover:text-primary"
-                aria-label="Twitter"
-              >
-                <FaXTwitter className="h-4 w-4" />
-              </a>
-              <a
-                href={companyInfo.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text-secondary transition-all hover:border-primary hover:text-primary"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn className="h-4 w-4" />
-              </a>
-              <a
-                href={companyInfo.socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text-secondary transition-all hover:border-primary hover:text-primary"
-                aria-label="GitHub"
-              >
-                <FaGithub className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -87,7 +57,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="min-w-0">
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-text-primary">
               Contact
             </h3>
@@ -97,8 +67,8 @@ export default function Footer() {
                   href={`mailto:${companyInfo.email}`}
                   className="flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-primary"
                 >
-                  <HiOutlineEnvelope className="h-4 w-4" />
-                  {companyInfo.email}
+                  <HiOutlineEnvelope className="h-4 w-4 shrink-0" />
+                  <span className="truncate">{companyInfo.email}</span>
                 </a>
               </li>
               <li>
@@ -106,8 +76,8 @@ export default function Footer() {
                   href={`tel:${companyInfo.phone}`}
                   className="flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-primary"
                 >
-                  <HiOutlinePhone className="h-4 w-4" />
-                  {companyInfo.phone}
+                  <HiOutlinePhone className="h-4 w-4 shrink-0" />
+                  <span className="truncate">{companyInfo.phone}</span>
                 </a>
               </li>
             </ul>

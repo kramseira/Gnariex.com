@@ -7,7 +7,7 @@ import { portfolio } from "@/lib/data";
 
 export default function Portfolio() {
   return (
-    <SectionWrapper id="portfolio" className="bg-surface/30">
+    <SectionWrapper id="portfolio">
       <div className="mb-16 text-center">
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           Our Work

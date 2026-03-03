@@ -60,7 +60,7 @@ export const stats = [
   { value: 150, suffix: "+", label: "Projects Delivered" },
   { value: 80, suffix: "+", label: "Happy Clients" },
   { value: 99.9, suffix: "%", label: "Uptime Guarantee" },
-  { value: 5, suffix: "+", label: "Years Experience" },
+  { value: 24, suffix: "/7", label: "Support Available" },
 ];
 
 // ─── Tech Stack ──────────────────────────────────────────────────────────────
