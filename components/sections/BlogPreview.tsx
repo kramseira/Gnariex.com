@@ -10,12 +10,12 @@ import { blogPosts } from "@/lib/data";
 export default function BlogPreview() {
   return (
     <SectionWrapper id="blog">
-      <div className="mb-16 flex flex-col items-center justify-between gap-4 sm:flex-row">
+      <div className="mb-10 flex flex-col items-center justify-between gap-4 sm:mb-16 sm:flex-row">
         <div>
           <span className="text-sm font-medium uppercase tracking-wider text-primary">
             Blog
           </span>
-          <h2 className="mt-4 text-3xl font-bold md:text-5xl font-[family-name:var(--font-display)]">
+          <h2 className="mt-4 text-2xl font-bold sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
             Latest <GradientText>Insights</GradientText>
           </h2>
         </div>

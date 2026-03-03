@@ -36,7 +36,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mt-8 text-5xl font-bold leading-tight tracking-tight font-[family-name:var(--font-display)] md:text-6xl lg:text-7xl"
+              className="mt-8 text-3xl font-bold leading-tight tracking-tight font-[family-name:var(--font-display)] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
             >
               Built Around
               <br />
@@ -52,11 +52,11 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 max-w-xl text-text-secondary"
             >
-              <span className="text-lg">
+              <span className="text-sm sm:text-base md:text-lg">
                 Advanced websites &bull; Portals &bull; Cloud Systems &bull; Mobile Apps &bull; Dashboards
               </span>
               <br />
-              <span className="text-base text-text-muted">
+              <span className="text-xs text-text-muted sm:text-sm">
                 Don&apos;t Adapt to Software. Let Software Adapt to You.
               </span>
             </motion.p>
@@ -66,12 +66,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
+              className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4"
             >
-              <Button href="/contact" variant="primary" size="lg">
+              <Button href="/contact" variant="primary" size="md" className="sm:px-8 sm:py-4 sm:text-base">
                 Start Your Project
               </Button>
-              <Button href="/services" variant="outline" size="lg">
+              <Button href="/services" variant="outline" size="md" className="sm:px-8 sm:py-4 sm:text-base">
                 Explore Services
               </Button>
             </motion.div>
@@ -81,7 +81,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-6 flex flex-wrap gap-6 text-xs text-text-muted"
+              className="mt-6 flex flex-wrap gap-4 text-xs text-text-muted sm:gap-6"
             >
               <span className="flex items-center gap-2">
                 <span className="h-1 w-1 rounded-full bg-primary" />

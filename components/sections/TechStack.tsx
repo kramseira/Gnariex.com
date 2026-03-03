@@ -123,10 +123,10 @@ export default function TechStack() {
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           Why It Matters
         </span>
-        <h2 className="mt-4 text-3xl font-bold md:text-5xl font-[family-name:var(--font-display)]">
+        <h2 className="mt-4 text-2xl font-bold sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
           Real <GradientText>Impact</GradientText> for Your Business
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-text-secondary">
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-text-secondary sm:text-base">
           We don&apos;t just build software — we solve problems that cost you time,
           money, and customers.
         </p>
@@ -178,7 +178,7 @@ export default function TechStack() {
           >
             <div className="grid md:grid-cols-2">
               {/* Before */}
-              <div className="relative border-b border-white/6 p-6 md:border-b-0 md:border-r">
+              <div className="relative border-b border-white/6 p-4 sm:p-6 md:border-b-0 md:border-r">
                 <div className="mb-4 flex items-center gap-2">
                   <span className="rounded-full bg-red-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-red-400">
                     Without Us
@@ -191,7 +191,7 @@ export default function TechStack() {
                   <p className="text-[10px] uppercase tracking-wider text-red-400/70">
                     {active.before.label}
                   </p>
-                  <p className="mt-1 text-3xl font-bold text-red-400">
+                  <p className="mt-1 text-2xl font-bold text-red-400 sm:text-3xl">
                     <AnimatedNumber value={active.before.value} />
                     <span className="ml-0.5 text-lg">{active.before.unit}</span>
                   </p>
@@ -199,7 +199,7 @@ export default function TechStack() {
               </div>
 
               {/* After */}
-              <div className="relative p-6">
+              <div className="relative p-4 sm:p-6">
                 <div className="mb-4 flex items-center gap-2">
                   <span
                     className="rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
@@ -228,7 +228,7 @@ export default function TechStack() {
                     {active.after.label}
                   </p>
                   <p
-                    className="mt-1 text-3xl font-bold"
+                    className="mt-1 text-2xl font-bold sm:text-3xl"
                     style={{ color: active.color }}
                   >
                     <AnimatedNumber value={active.after.value} />

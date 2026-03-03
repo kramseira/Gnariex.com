@@ -30,10 +30,10 @@ export default function ContactPage() {
             <span className="text-sm font-medium uppercase tracking-wider text-primary">
               Contact
             </span>
-            <h1 className="mt-4 text-4xl font-bold md:text-6xl font-[family-name:var(--font-display)]">
+            <h1 className="mt-4 text-3xl font-bold sm:text-4xl md:text-6xl font-[family-name:var(--font-display)]">
               Let&apos;s <GradientText>Connect</GradientText>
             </h1>
-            <p className="mt-6 text-lg text-text-secondary">
+            <p className="mt-4 text-base text-text-secondary sm:mt-6 sm:text-lg">
               Have a project in mind? We&apos;d love to hear about it. Get in
               touch and let&apos;s start building something great together.
             </p>
@@ -43,7 +43,7 @@ export default function ContactPage() {
 
       {/* Contact Form & Info */}
       <SectionWrapper className="bg-surface/30">
-        <div className="grid gap-12 lg:grid-cols-3">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-3">
           {/* Contact Info */}
           <div className="space-y-6">
             <GlassCard>

@@ -68,10 +68,10 @@ export default function AboutPage() {
             <span className="text-sm font-medium uppercase tracking-wider text-primary">
               About Us
             </span>
-            <h1 className="mt-4 text-4xl font-bold md:text-6xl font-[family-name:var(--font-display)]">
+            <h1 className="mt-4 text-3xl font-bold sm:text-4xl md:text-6xl font-[family-name:var(--font-display)]">
               Building the <GradientText>Future</GradientText> of Technology
             </h1>
-            <p className="mt-6 text-lg text-text-secondary leading-relaxed">
+            <p className="mt-4 text-base text-text-secondary leading-relaxed sm:mt-6 sm:text-lg">
               Gnariex is a team of passionate engineers, designers, and
               strategists dedicated to delivering next-level technology
               solutions that transform businesses.
@@ -109,7 +109,7 @@ export default function AboutPage() {
       {/* Values */}
       <SectionWrapper>
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold md:text-5xl font-[family-name:var(--font-display)]">
+          <h2 className="text-2xl font-bold sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
             Our <GradientText>Values</GradientText>
           </h2>
         </div>
@@ -137,10 +137,10 @@ export default function AboutPage() {
 
       {/* Stats */}
       <SectionWrapper className="bg-surface/30">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl font-bold text-primary md:text-4xl font-[family-name:var(--font-display)]">
+              <div className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl font-[family-name:var(--font-display)]">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
               <p className="mt-2 text-sm text-text-secondary">{stat.label}</p>
@@ -155,7 +155,7 @@ export default function AboutPage() {
           <span className="text-sm font-medium uppercase tracking-wider text-primary">
             Our Team
           </span>
-          <h2 className="mt-4 text-3xl font-bold md:text-5xl font-[family-name:var(--font-display)]">
+          <h2 className="mt-4 text-2xl font-bold sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
             Meet the <GradientText>Experts</GradientText>
           </h2>
         </div>

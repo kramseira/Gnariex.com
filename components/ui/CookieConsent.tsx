@@ -142,7 +142,7 @@ export default function CookieConsent() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-lg"
+          className="fixed bottom-3 left-3 right-3 z-50 mx-auto max-w-lg sm:bottom-4 sm:left-4 sm:right-4"
         >
           <div className="overflow-hidden rounded-xl border border-white/8 bg-surface/90 shadow-2xl backdrop-blur-xl">
             <div className="p-4">
@@ -163,7 +163,7 @@ export default function CookieConsent() {
               </div>
 
               {/* Buttons */}
-              <div className="mt-3 flex items-center gap-2 pl-11">
+              <div className="mt-3 flex flex-wrap items-center gap-2 pl-0 sm:pl-11">
                 <button
                   onClick={handleAcceptAll}
                   className="rounded-lg bg-primary px-3.5 py-1.5 text-xs font-semibold text-background transition-all hover:bg-primary-dark hover:shadow-[0_0_16px_rgba(0,208,132,0.25)]"

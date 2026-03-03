@@ -21,16 +21,16 @@ export default function Services() {
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           What We Do
         </span>
-        <h2 className="mt-4 text-3xl font-bold md:text-5xl font-[family-name:var(--font-display)]">
+        <h2 className="mt-4 text-2xl font-bold sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
           Our <GradientText>Services</GradientText>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-text-secondary">
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-text-secondary sm:text-base">
           From concept to deployment, we deliver end-to-end technology solutions
           that help businesses thrive in the digital age.
         </p>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => {
           const accent = ACCENT_COLORS[index % ACCENT_COLORS.length];
           const Icon = service.icon;

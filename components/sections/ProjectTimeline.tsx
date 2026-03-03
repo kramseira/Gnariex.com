@@ -203,10 +203,10 @@ export default function ProjectTimeline() {
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           Your Project Roadmap
         </span>
-        <h2 className="mt-4 text-3xl font-bold md:text-5xl font-[family-name:var(--font-display)]">
+        <h2 className="mt-4 text-2xl font-bold sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
           Build Your <GradientText>Journey</GradientText>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-text-secondary">
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-text-secondary sm:text-base">
           Select phases, drag to reorder, and watch your custom roadmap come to
           life.
         </p>
@@ -230,7 +230,7 @@ export default function ProjectTimeline() {
                 onReorder={setAllIds}
                 className="flex flex-wrap gap-2"
               >
-                {allIds.map((id, i) => {
+                {allIds.map((id) => {
                   const m = MILESTONES.find((x) => x.id === id)!;
                   const Icon = m.icon;
                   const on = selectedIds.has(id);
@@ -242,7 +242,7 @@ export default function ProjectTimeline() {
                       key={id}
                       value={id}
                       as="div"
-                      layout={false}
+                      layout={undefined}
                       whileDrag={{
                         scale: 1.05,
                         boxShadow: `0 12px 40px ${m.color}30`,
@@ -524,7 +524,7 @@ export default function ProjectTimeline() {
                 <HiOutlineSparkles className="h-8 w-8 text-background" />
               </motion.div>
               <p className="text-sm font-semibold">Crafting your roadmap...</p>
-              <div className="mt-4 h-1 w-48 overflow-hidden rounded-full bg-border/20">
+              <div className="mt-4 h-1 w-40 overflow-hidden rounded-full bg-border/20 sm:w-48">
                 <motion.div
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}

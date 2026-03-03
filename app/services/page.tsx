@@ -21,10 +21,10 @@ export default function ServicesPage() {
             <span className="text-sm font-medium uppercase tracking-wider text-primary">
               Services
             </span>
-            <h1 className="mt-4 text-4xl font-bold md:text-6xl font-[family-name:var(--font-display)]">
+            <h1 className="mt-4 text-3xl font-bold sm:text-4xl md:text-6xl font-[family-name:var(--font-display)]">
               What We <GradientText>Build</GradientText>
             </h1>
-            <p className="mt-6 text-lg text-text-secondary leading-relaxed">
+            <p className="mt-4 text-base text-text-secondary leading-relaxed sm:mt-6 sm:text-lg">
               End-to-end technology solutions crafted with precision. From
               websites to cloud infrastructure, we handle it all.
             </p>
@@ -34,7 +34,7 @@ export default function ServicesPage() {
 
       {/* Services Detail */}
       <SectionWrapper className="bg-surface/30">
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -42,7 +42,7 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className={`grid items-center gap-12 lg:grid-cols-2 ${
+              className={`grid items-center gap-8 md:gap-12 lg:grid-cols-2 ${
                 index % 2 !== 0 ? "lg:direction-rtl" : ""
               }`}
             >

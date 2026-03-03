@@ -6,8 +6,8 @@ import GradientLogo from "@/components/ui/GradientLogo";
 export default function Footer() {
   return (
     <footer className="overflow-hidden border-t border-border bg-surface/50">
-      <div className="mx-auto max-w-7xl px-4 py-16 md:px-8">
-        <div className="grid gap-12 overflow-hidden md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
+        <div className="grid gap-8 overflow-hidden sm:gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
           {/* Brand */}
           <div className="min-w-0 space-y-1">
             <Link href="/" aria-label="Gnariex Home">

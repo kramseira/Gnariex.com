@@ -21,10 +21,10 @@ export default function BlogPage() {
             <span className="text-sm font-medium uppercase tracking-wider text-primary">
               Blog
             </span>
-            <h1 className="mt-4 text-4xl font-bold md:text-6xl font-[family-name:var(--font-display)]">
+            <h1 className="mt-4 text-3xl font-bold sm:text-4xl md:text-6xl font-[family-name:var(--font-display)]">
               Insights & <GradientText>Ideas</GradientText>
             </h1>
-            <p className="mt-6 text-lg text-text-secondary">
+            <p className="mt-4 text-base text-text-secondary sm:mt-6 sm:text-lg">
               Thoughts on technology, development, and building better digital
               products.
             </p>
@@ -44,7 +44,7 @@ export default function BlogPage() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <Link href={`/blog/${post.slug}`} className="group block">
-                <div className="glass glow-hover rounded-xl p-8">
+                <div className="glass glow-hover rounded-xl p-5 sm:p-8">
                   <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 text-xs text-text-muted">

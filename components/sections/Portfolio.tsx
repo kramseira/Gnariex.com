@@ -8,14 +8,14 @@ import { portfolio } from "@/lib/data";
 export default function Portfolio() {
   return (
     <SectionWrapper id="portfolio">
-      <div className="mb-16 text-center">
+      <div className="mb-10 text-center sm:mb-16">
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           Our Work
         </span>
-        <h2 className="mt-4 text-3xl font-bold md:text-5xl font-[family-name:var(--font-display)]">
+        <h2 className="mt-4 text-2xl font-bold sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
           Featured <GradientText>Projects</GradientText>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-text-secondary">
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-text-secondary sm:text-base">
           A selection of projects that showcase our expertise in building
           modern digital solutions.
         </p>
@@ -30,7 +30,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
           >
-            <div className="glass glow-hover group relative overflow-hidden rounded-xl p-8">
+            <div className="glass glow-hover group relative overflow-hidden rounded-xl p-5 sm:p-8">
               {/* Gradient overlay */}
               <div
                 className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 transition-opacity group-hover:opacity-100`}

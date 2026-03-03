@@ -23,7 +23,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="pt-20">
-      <article className="mx-auto max-w-3xl px-4 py-20 md:px-8">
+      <article className="mx-auto max-w-3xl px-4 py-12 sm:py-20 md:px-8">
         {/* Back link */}
         <Link
           href="/blog"
@@ -35,7 +35,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Header */}
         <header className="mt-8">
-          <div className="flex items-center gap-4 text-sm text-text-muted">
+          <div className="flex flex-wrap items-center gap-3 text-sm text-text-muted sm:gap-4">
             <span className="rounded-md bg-primary/10 px-2.5 py-1 text-primary">
               {post.category}
             </span>
@@ -52,10 +52,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               })}
             </span>
           </div>
-          <h1 className="mt-6 text-3xl font-bold leading-tight md:text-5xl font-[family-name:var(--font-display)]">
+          <h1 className="mt-6 text-2xl font-bold leading-tight sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
             {post.title}
           </h1>
-          <p className="mt-4 text-lg text-text-secondary">{post.excerpt}</p>
+          <p className="mt-4 text-base text-text-secondary sm:text-lg">{post.excerpt}</p>
         </header>
 
         {/* Divider */}
@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-16 rounded-xl border border-border bg-surface/50 p-8 text-center">
+        <div className="mt-12 rounded-xl border border-border bg-surface/50 p-5 text-center sm:mt-16 sm:p-8">
           <h3 className="text-xl font-bold font-[family-name:var(--font-display)]">
             Need help with your project?
           </h3>
