@@ -7,7 +7,7 @@ import { stats } from "@/lib/data";
 
 export default function About() {
   return (
-    <SectionWrapper id="about" className="bg-surface/30">
+    <SectionWrapper id="about" className="pb-8 lg:pb-10">
       <div className="grid items-center gap-16 lg:grid-cols-2">
         {/* Text */}
         <div>

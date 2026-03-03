@@ -16,6 +16,8 @@ export const services = [
     description:
       "High-performance, SEO-optimized websites built with cutting-edge technologies. From corporate sites to complex web applications.",
     features: ["Custom Design", "SEO Optimized", "Lightning Fast", "Responsive"],
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Web design on multi-monitor setup",
   },
   {
     icon: HiOutlineShieldCheck,
@@ -23,6 +25,8 @@ export const services = [
     description:
       "Secure, intuitive client portals that streamline communication and deliver real-time project visibility to your customers.",
     features: ["Role-Based Access", "Real-Time Data", "Secure Auth", "Custom Workflows"],
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Secure client portal on laptop",
   },
   {
     icon: HiOutlineCloudArrowUp,
@@ -30,6 +34,8 @@ export const services = [
     description:
       "Scalable cloud infrastructure and SaaS solutions designed to grow with your business. Built for reliability and performance.",
     features: ["Auto Scaling", "99.9% Uptime", "Data Security", "Global CDN"],
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Cloud infrastructure and servers",
   },
   {
     icon: HiOutlineChartBarSquare,
@@ -37,6 +43,8 @@ export const services = [
     description:
       "Powerful admin dashboards with real-time analytics, user management, and complete control over your digital ecosystem.",
     features: ["Real-Time Analytics", "User Management", "Custom Reports", "API Integration"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Analytics dashboard with charts",
   },
   {
     icon: HiOutlineDevicePhoneMobile,
@@ -44,6 +52,8 @@ export const services = [
     description:
       "Native and cross-platform mobile apps that deliver seamless experiences across iOS and Android devices.",
     features: ["Cross-Platform", "Push Notifications", "Offline Mode", "App Store Ready"],
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Mobile app interface on smartphone",
   },
   {
     icon: HiOutlineLightBulb,
@@ -51,6 +61,8 @@ export const services = [
     description:
       "Strategic technology consulting to help your business make informed decisions and adopt the right solutions.",
     features: ["Tech Strategy", "Architecture Review", "Digital Transformation", "Team Training"],
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Team strategy and technology consulting session",
   },
 ];
 
@@ -91,33 +103,137 @@ export const portfolio = [
     title: "CloudVault Pro",
     description:
       "Enterprise cloud storage platform with advanced encryption, team collaboration, and real-time sync across devices.",
+    longDescription:
+      "CloudVault Pro is a secure, enterprise-grade cloud storage and collaboration platform built for mid-to-large organizations. It features end-to-end encryption, granular permission controls, and seamless real-time file sync. Teams can collaborate on documents, manage version history, and set automated backup schedules — all from a unified dashboard.",
     tags: ["Next.js", "AWS", "TypeScript"],
     category: "Cloud System",
     color: "from-primary/20 to-secondary/20",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Server infrastructure for cloud platform",
+    metrics: [
+      { label: "Uptime", value: "99.99%" },
+      { label: "Files Synced Daily", value: "2M+" },
+      { label: "Storage Managed", value: "50TB" },
+    ],
   },
   {
     title: "MediTrack Dashboard",
     description:
       "Healthcare admin dashboard with patient management, appointment scheduling, and HIPAA-compliant data handling.",
+    longDescription:
+      "MediTrack is a HIPAA-compliant admin dashboard built for healthcare providers. It centralizes patient records, appointment calendars, and billing workflows into a single interface. The system includes role-based access for doctors, nurses, and admin staff, with a full audit trail on all sensitive data operations.",
     tags: ["React", "Node.js", "PostgreSQL"],
     category: "Admin Dashboard",
     color: "from-secondary/20 to-accent/20",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Healthcare dashboard on tablet and desktop",
+    metrics: [
+      { label: "Patients Managed", value: "12K+" },
+      { label: "Avg. Load Time", value: "0.8s" },
+      { label: "Data Accuracy", value: "99.7%" },
+    ],
   },
   {
     title: "FinanceHub Portal",
     description:
       "Client-facing financial portal with real-time portfolio tracking, secure document exchange, and automated reporting.",
+    longDescription:
+      "FinanceHub is a white-label client portal for financial advisory firms. Clients log in to view live portfolio performance, exchange encrypted documents, and download automated monthly reports. Advisors get a back-office panel with CRM tools, compliance tracking, and customizable report templates.",
     tags: ["Next.js", "GraphQL", "MongoDB"],
     category: "Client Portal",
     color: "from-accent/20 to-primary/20",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Financial analytics dashboard with charts",
+    metrics: [
+      { label: "AUM Tracked", value: "$200M+" },
+      { label: "Client Satisfaction", value: "+40%" },
+      { label: "Report Generation", value: "Automated" },
+    ],
   },
   {
     title: "ShopStream",
     description:
       "High-performance e-commerce platform handling 10K+ concurrent users with real-time inventory and AI-powered recommendations.",
+    longDescription:
+      "ShopStream is a headless e-commerce platform engineered for scale. Built to handle flash-sale traffic spikes with 10K+ concurrent users, it features a Redis-backed inventory engine, AI-driven product recommendations, and a real-time order management system. The storefront achieves a Lighthouse score of 98.",
     tags: ["React", "Python", "Redis"],
     category: "Web Application",
     color: "from-primary/20 to-accent/20",
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "E-commerce storefront on desktop and mobile",
+    metrics: [
+      { label: "Concurrent Users", value: "10K+" },
+      { label: "Lighthouse Score", value: "98" },
+      { label: "Conversion Lift", value: "+28%" },
+    ],
+  },
+  {
+    title: "FleetTrack",
+    description:
+      "Vehicle and fleet management system with real-time GPS tracking, maintenance scheduling, driver logs, and fuel cost reporting.",
+    longDescription:
+      "FleetTrack is a comprehensive vehicle management platform built for transport companies, logistics providers, and government fleets. It delivers live GPS tracking on an interactive map, automated maintenance reminders, digital driver logbooks, and detailed fuel and cost analytics. Dispatchers can assign routes, monitor driver behavior, and generate compliance reports — all from a single web-based console.",
+    tags: ["React", "Node.js", "PostgreSQL", "Mapbox"],
+    category: "Fleet Management",
+    color: "from-primary/20 to-secondary/20",
+    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Fleet of vehicles managed via web dashboard",
+    metrics: [
+      { label: "Vehicles Tracked", value: "500+" },
+      { label: "Fuel Cost Saved", value: "30%" },
+      { label: "Route Efficiency", value: "+42%" },
+    ],
+  },
+  {
+    title: "BookEase Suite",
+    description:
+      "Integrated booking and accounting web app with calendar scheduling, invoice generation, payment tracking, and financial reporting.",
+    longDescription:
+      "BookEase Suite combines a full-featured appointment booking system with a built-in accounting engine, eliminating the need for separate tools. Businesses can manage client bookings, send automated reminders, generate professional invoices, track receivables and payables, and produce profit & loss statements — all within one platform. Role-based access supports front-desk staff, accountants, and management with tailored views.",
+    tags: ["Next.js", "Prisma", "Stripe", "PostgreSQL"],
+    category: "Web Application",
+    color: "from-secondary/20 to-accent/20",
+    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Booking calendar and accounting dashboard interface",
+    metrics: [
+      { label: "Bookings Processed", value: "8K+/mo" },
+      { label: "Invoice Accuracy", value: "100%" },
+      { label: "Admin Time Saved", value: "15hrs/wk" },
+    ],
+  },
+  {
+    title: "NexaERP",
+    description:
+      "Enterprise resource planning system covering inventory, procurement, HR, payroll, and financial management for mid-size businesses.",
+    longDescription:
+      "NexaERP is a modular enterprise resource planning platform designed for growing mid-size businesses in Papua New Guinea and the Pacific region. Modules include inventory and warehouse management, purchase orders and supplier management, HR and payroll with leave tracking, general ledger and financial reporting, and a management dashboard with live KPIs. The system integrates with local banking APIs and supports multi-currency and multi-branch operations.",
+    tags: ["React", "Python", "Django", "PostgreSQL"],
+    category: "ERP System",
+    color: "from-accent/20 to-primary/20",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "ERP business analytics and resource planning dashboard",
+    metrics: [
+      { label: "Modules Integrated", value: "8" },
+      { label: "Processing Time", value: "-60%" },
+      { label: "Data Accuracy", value: "99.5%" },
+    ],
+  },
+  {
+    title: "CivicConnect Portal",
+    description:
+      "Community and government service portal enabling citizens to submit requests, track applications, and access public services online.",
+    longDescription:
+      "CivicConnect is a citizen-facing digital services portal that bridges residents and local government institutions. Citizens can register, submit service requests (permits, utilities, complaints), upload supporting documents, and track real-time application status. Government staff get a back-office workflow manager with automated routing, SLA tracking, and a reporting suite. Designed with accessibility and low-bandwidth environments in mind for regional PNG use.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    category: "Gov Portal",
+    color: "from-primary/20 to-accent/20",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Government community service portal on desktop",
+    metrics: [
+      { label: "Service Requests", value: "3K+/mo" },
+      { label: "Resolution Time", value: "-45%" },
+      { label: "Citizen Rating", value: "4.8/5" },
+    ],
   },
 ];
 
@@ -180,6 +296,34 @@ export const testimonials = [
 
 export const blogPosts = [
   {
+    slug: "ai-in-business-applications-2026",
+    title: "AI in Business Applications: What Actually Works in 2026",
+    excerpt:
+      "Beyond the hype — a practical breakdown of where AI delivers real ROI in business software, and where it still falls short.",
+    date: "2026-03-01",
+    category: "AI",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "AI and machine learning visualization",
+    content: `AI has gone from boardroom buzzword to line-item budget. But not every AI investment is paying off equally. In 2026, the gap between teams using AI effectively and those chasing trends has never been wider.
+
+## Where AI Delivers Real ROI
+
+The highest-value applications we've seen are narrow, well-scoped, and deeply integrated into existing workflows. Document parsing and classification, anomaly detection in operational data, and intelligent search inside enterprise systems — these are the areas where AI pays for itself within months.
+
+## Where It Still Falls Short
+
+Fully autonomous decision-making in high-stakes domains remains unreliable. AI-generated code that isn't reviewed by engineers introduces subtle bugs. Any application where the cost of a wrong answer is high needs a human in the loop.
+
+## The Integration Layer Is Everything
+
+The difference between a useful AI feature and a failed pilot is usually not the model — it's the integration. Teams that invest in clean data pipelines, structured outputs, and rigorous evaluation loops see dramatically better results.
+
+## What We Do Differently at Gnariex
+
+We treat AI as a capability layer, not a product. Every AI feature we build for clients is scoped with clear success criteria, an evaluation framework, and a fallback path. That discipline is what separates deployments that scale from demos that don't.`,
+  },
+  {
     slug: "future-of-cloud-computing-2026",
     title: "The Future of Cloud Computing in 2026",
     excerpt:
@@ -187,6 +331,8 @@ export const blogPosts = [
     date: "2026-02-28",
     category: "Cloud",
     readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Cloud computing and server infrastructure",
     content: `Cloud computing continues to evolve at a rapid pace. In 2026, we're seeing several transformative trends that are reshaping how businesses build and deploy technology.
 
 ## Edge Computing Goes Mainstream
@@ -217,6 +363,8 @@ Staying competitive means embracing these trends. At Gnariex, we help businesses
     date: "2026-02-15",
     category: "Security",
     readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Cybersecurity and data protection",
     content: `Client portals are the gateway between your business and your customers. Getting security right isn't optional — it's foundational.
 
 ## Authentication Best Practices
@@ -247,6 +395,8 @@ At Gnariex, security isn't an afterthought. Every client portal we build undergo
     date: "2026-01-30",
     category: "Development",
     readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Web development code on screen",
     content: `Next.js has established itself as the leading React framework, and for good reason. Here's why we at Gnariex build with Next.js.
 
 ## Server-Side Rendering & Static Generation
@@ -269,6 +419,62 @@ With API routes and Server Actions, Next.js is a full-stack framework. You can b
 
 For our clients, Next.js means faster load times, better SEO, and a codebase that's easier to maintain and scale. It's the technology that powers the modern web.`,
   },
+  {
+    slug: "ux-patterns-that-drive-conversions",
+    title: "UX Patterns That Drive Conversions: Lessons from 50 Projects",
+    excerpt:
+      "After building 50+ digital products, these are the UX decisions that consistently moved the needle — and the ones that looked good but didn't.",
+    date: "2026-02-10",
+    category: "Design",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "UX design wireframes and user interface",
+    content: `Good design is easy to recognize and hard to replicate. After 50+ projects, we've identified the patterns that reliably increase engagement — and the traps that look polished but hurt conversion.
+
+## Clarity Beats Cleverness Every Time
+
+The biggest conversion killer we see is ambiguous CTAs. Buttons labeled "Learn More" or "Get Started" underperform against specific, outcome-driven labels like "See Pricing" or "Book a 30-Minute Call." Users click when they know exactly what happens next.
+
+## Reduce Cognitive Load at Every Step
+
+Every decision a user has to make is friction. Forms with fewer fields outperform comprehensive ones. Single-column layouts beat multi-column. Progressive disclosure — showing only what's needed, when it's needed — is one of the highest-leverage patterns we apply consistently.
+
+## Trust Signals Near the Action
+
+Social proof placed directly beside a conversion element (not buried in a separate section) lifts completion rates measurably. A single relevant testimonial next to a contact form consistently outperforms a full testimonials page.
+
+## Mobile Is Primary
+
+Over 60% of traffic on the projects we deliver is mobile. We design for the thumb first — large tap targets, minimal scrolling to reach key actions, and forms that don't require zooming. Mobile-first isn't a trend; it's the baseline.`,
+  },
+  {
+    slug: "microservices-vs-monolith-choosing-architecture",
+    title: "Microservices vs Monolith: Choosing the Right Architecture",
+    excerpt:
+      "The architecture debate that never ends — but the answer is simpler than most teams think. Here's our practical decision framework.",
+    date: "2026-01-18",
+    category: "Architecture",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Software architecture network diagram",
+    content: `The microservices vs monolith debate has filled more engineering blog posts than almost any other topic. In practice, the decision is less philosophical and more situational.
+
+## Start With the Monolith
+
+For the vast majority of new products and teams under 20 engineers, a well-structured monolith is the right call. It's faster to build, easier to debug, simpler to deploy, and doesn't require orchestration infrastructure. The pain points that microservices solve — independent scaling, isolated deployments, polyglot persistence — don't exist at small scale.
+
+## When to Introduce Service Boundaries
+
+The signals that a bounded extraction makes sense: a single module is bottlenecking deployments for the rest of the system, a component has dramatically different scaling requirements, or multiple teams need to own separate codebases independently. These are real problems. Preemptive decomposition is not a solution — it's complexity debt.
+
+## The Modular Monolith Is Underrated
+
+The best of both worlds for most teams is a modular monolith — clear internal module boundaries with shared infrastructure. It preserves deployment simplicity while enforcing the separation of concerns that makes future extraction tractable.
+
+## Our Recommendation
+
+Build a monolith with clear domain boundaries. Extract services when you feel specific pain, not before. The teams we work with that follow this path ship faster and operate more reliably than those who start distributed.`,
+  },
 ];
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
@@ -277,7 +483,7 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/#portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
@@ -286,9 +492,9 @@ export const navLinks = [
 
 export const companyInfo = {
   name: "Gnariex",
-  tagline: "Next-Level Solutions.",
+  tagline: "Trusted IT Solutions Partner for PNG & Worldwide.",
   description:
-    "We build advanced websites, client portals, admin dashboards, cloud-based systems, and mobile applications that drive business growth.",
+    "Gnariex is a trusted IT solutions partner delivering advanced websites, client portals, admin dashboards, cloud systems, and mobile apps for Papua New Guinea businesses and clients worldwide.",
   email: "info@gnariex.com",
   phone: "+63 956 043 1217",
   socials: {

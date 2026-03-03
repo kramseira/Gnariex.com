@@ -25,6 +25,9 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
+  /* Dot grid — site-wide so no section seams */
+  background-image: radial-gradient(circle, rgba(30, 32, 48, 0.6) 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
 /* Scrollbar */
@@ -48,6 +51,11 @@ body {
   color: #ffffff;
 }
 
+/* Display font — tight letter-spacing for premium heading look */
+.font-display {
+  letter-spacing: -0.03em;
+}
+
 /* Gradient Text Utility */
 .gradient-text {
   background: linear-gradient(135deg, #00d084, #0693e3, #9b51e0);
@@ -56,12 +64,13 @@ body {
   background-clip: text;
 }
 
-/* Glass Effect */
+/* Glass Effect — top-lit border (Linear technique) */
 .glass {
   background: rgba(18, 20, 26, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(30, 32, 48, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Glow Hover */
@@ -117,6 +126,11 @@ body {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Smooth scroll */

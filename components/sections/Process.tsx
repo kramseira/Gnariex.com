@@ -7,7 +7,7 @@ import { process } from "@/lib/data";
 
 export default function Process() {
   return (
-    <SectionWrapper id="process">
+    <SectionWrapper id="process" className="pb-8 lg:pb-10">
       <div className="mb-16 text-center">
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           How We Work

@@ -8,7 +8,7 @@ import { testimonials } from "@/lib/data";
 
 export default function Testimonials() {
   return (
-    <SectionWrapper id="testimonials" className="bg-surface/30">
+    <SectionWrapper id="testimonials" className="pb-8 lg:pb-10">
       <div className="mb-10 text-center sm:mb-16">
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           Testimonials

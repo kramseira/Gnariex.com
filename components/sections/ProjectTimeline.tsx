@@ -83,7 +83,7 @@ const PHASES = [
 
 export default function ProjectTimeline() {
   return (
-    <SectionWrapper id="project-timeline">
+    <SectionWrapper id="project-timeline" className="pb-8 lg:pb-10">
       {/* Header */}
       <div className="mb-10 text-center sm:mb-14">
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
@@ -119,25 +119,21 @@ export default function ProjectTimeline() {
                   style={{ backgroundColor: phase.color }}
                 />
 
-                {/* Step number */}
-                <span
-                  className="mb-3 inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold text-background"
-                  style={{ backgroundColor: phase.color }}
-                >
-                  {i + 1}
-                </span>
-
-                {/* Icon */}
-                <div
-                  className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg"
-                  style={{ backgroundColor: `${phase.color}15`, color: phase.color }}
-                >
-                  <Icon className="h-4.5 w-4.5" />
-                </div>
-
-                {/* Title + duration */}
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-bold text-text-primary">
+                {/* Number + Icon + Title row */}
+                <div className="mb-3 flex items-center gap-2">
+                  <span
+                    className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-bold text-background"
+                    style={{ backgroundColor: phase.color }}
+                  >
+                    {i + 1}
+                  </span>
+                  <div
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg"
+                    style={{ backgroundColor: `${phase.color}15`, color: phase.color }}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <h3 className="flex-1 text-sm font-bold text-text-primary">
                     {phase.label}
                   </h3>
                   <span className="flex shrink-0 items-center gap-1 text-[10px] text-text-muted">
@@ -151,17 +147,14 @@ export default function ProjectTimeline() {
                 </p>
 
                 {/* Deliverables */}
-                <ul className="mt-3 space-y-1 border-t border-white/6 pt-3">
-                  {phase.deliverables.map((d) => (
-                    <li key={d} className="flex items-center gap-1.5">
-                      <span
-                        className="h-1 w-1 shrink-0 rounded-full"
-                        style={{ backgroundColor: phase.color }}
-                      />
+                <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-white/6 pt-3">
+                  {phase.deliverables.map((d, j) => (
+                    <span key={d} className="flex items-center gap-1">
+                      {j > 0 && <span className="text-[10px] text-white/20">·</span>}
                       <span className="text-[10px] text-text-secondary">{d}</span>
-                    </li>
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             </motion.div>
           );

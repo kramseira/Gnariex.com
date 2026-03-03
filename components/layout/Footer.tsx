@@ -14,7 +14,10 @@ export default function Footer() {
               <GradientLogo />
             </Link>
             <p className="text-sm font-medium text-text-primary">
-              Next-Level Solutions.
+              Trusted IT Solutions Partner for PNG & Worldwide.
+            </p>
+            <p className="mt-1 text-xs text-text-muted">
+              Websites · Portals · Cloud · Mobile · Dashboards
             </p>
           </div>
 
@@ -87,7 +90,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-xs text-text-muted">
-            &copy; {new Date().getFullYear()} Gnariex. All rights reserved.
+            &copy; {new Date().getFullYear()} Gnariex &mdash; Trusted IT Solutions Partner for PNG & Worldwide. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

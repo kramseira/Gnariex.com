@@ -16,7 +16,7 @@ const ACCENT_COLORS = [
 
 export default function Services() {
   return (
-    <SectionWrapper id="services">
+    <SectionWrapper id="services" className="pb-8 lg:pb-10">
       <div className="mb-12 text-center">
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           What We Do

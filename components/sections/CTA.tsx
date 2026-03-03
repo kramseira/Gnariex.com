@@ -5,11 +5,7 @@ import Button from "@/components/ui/Button";
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden px-4 py-16 md:px-8 md:py-20 lg:py-24">
-      {/* Background */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5" />
-      <div className="pointer-events-none absolute top-0 left-1/4 h-[300px] w-[300px] rounded-full bg-primary/10 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-0 right-1/4 h-[300px] w-[300px] rounded-full bg-accent/10 blur-[120px]" />
+    <section className="relative px-4 py-16 md:px-8 md:py-20 lg:py-24">
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -18,7 +14,7 @@ export default function CTA() {
         transition={{ duration: 0.6 }}
         className="relative z-10 mx-auto max-w-3xl text-center"
       >
-        <h2 className="text-2xl font-bold sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
+        <h2 className="font-display text-2xl font-bold sm:text-3xl md:text-5xl">
           Ready to build something{" "}
           <span className="gradient-text">amazing</span>?
         </h2>

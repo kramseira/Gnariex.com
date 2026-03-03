@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, KeyboardEvent } from "react";
+import { useState, useEffect, useRef, KeyboardEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   HiOutlineChartBar,
@@ -17,6 +17,7 @@ import {
   HiOutlineArrowTrendingUp,
   HiOutlineUserGroup,
   HiOutlineShieldCheck,
+  HiOutlineCheckCircle,
 } from "react-icons/hi2";
 import GradientText from "@/components/ui/GradientText";
 import Button from "@/components/ui/Button";
@@ -51,6 +52,7 @@ interface CanvasItem {
 }
 
 export default function IdeaPlayground() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [canvas, setCanvas] = useState<CanvasItem[]>([]);
   const [customInput, setCustomInput] = useState("");
   const [building, setBuilding] = useState(false);
@@ -143,6 +145,7 @@ export default function IdeaPlayground() {
 
   const buildSolution = () => {
     if (canvas.length < 3) return;
+    containerRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
     setBuilding(true);
     setTimeout(() => {
       setBuilding(false);
@@ -158,11 +161,21 @@ export default function IdeaPlayground() {
     setCompleted(false);
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1023px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
   const painItems = PRESET_ITEMS.filter((i) => i.category === "pain");
   const wishItems = PRESET_ITEMS.filter((i) => i.category === "wish");
 
   return (
-    <div className="lg:pt-6">
+    <div ref={containerRef} className="lg:pt-6">
       {/* Header */}
       <div className="mb-5 flex items-center gap-4">
         <motion.div
@@ -172,20 +185,13 @@ export default function IdeaPlayground() {
           <HiOutlineCursorArrowRays className="h-6 w-6 text-primary" />
         </motion.div>
         <div>
-          <h3 className="text-base font-bold text-text-primary font-[family-name:var(--font-display)]">
+          <h3 className="text-xl font-bold text-text-primary font-display sm:text-2xl">
             What&apos;s <GradientText>holding you back</GradientText>?
           </h3>
-          <p className="text-xs text-text-muted">
+          <p className="mt-1 text-sm text-text-muted sm:text-base">
             Tell us your challenges — we&apos;ll design the solution
           </p>
         </div>
-        <motion.span
-          animate={{ opacity: [1, 0.4, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="ml-auto rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary"
-        >
-          Interactive
-        </motion.span>
       </div>
 
       <div>
@@ -197,36 +203,42 @@ export default function IdeaPlayground() {
                 <p className="mb-2.5 text-sm font-medium uppercase tracking-wider text-red-400/70">
                   Pain Points
                 </p>
-                <div className="flex flex-wrap gap-2.5">
-                  {painItems.map((item) => {
-                    const Icon = item.icon;
-                    const used = usedPresets.has(item.id);
-                    const isHighlighted = canvas.length === 0 && PRESET_ITEMS[highlightIndex]?.id === item.id;
-                    return (
-                      <span key={item.id} className="relative">
-                        <motion.button
-                          onClick={() => addPreset(item)}
-                          disabled={used || canvas.length >= 8}
-                          whileHover={{ scale: used ? 1 : 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          animate={
-                            isHighlighted
-                              ? { scale: [1, 1.08, 1], boxShadow: ["0 0 0px transparent", "0 0 12px rgba(239,68,68,0.3)", "0 0 0px transparent"] }
-                              : {}
-                          }
-                          transition={isHighlighted ? { duration: 0.8 } : { duration: 0.2 }}
-                          className={`flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
-                            used
-                              ? "cursor-not-allowed border-border/20 bg-surface/20 text-text-muted/30 opacity-50"
-                              : `${item.color} cursor-pointer hover:shadow-md`
-                          }`}
-                        >
-                          <Icon className="h-4 w-4" />
-                          {item.label}
-                        </motion.button>
-                      </span>
-                    );
-                  })}
+                <div className="relative overflow-hidden">
+                  <div className="pointer-events-none absolute left-0 top-0 bottom-1 z-10 w-6 bg-gradient-to-r from-background to-transparent lg:hidden" />
+                  <div className="pointer-events-none absolute right-0 top-0 bottom-1 z-10 w-12 bg-gradient-to-l from-background to-transparent lg:hidden" />
+                  <div
+                    className="flex gap-2 pb-1 lg:flex-wrap"
+                    style={isMobile ? { animation: "marquee 18s linear infinite" } : {}}
+                    onMouseEnter={(e) => isMobile && ((e.currentTarget as HTMLElement).style.animationPlayState = "paused")}
+                    onMouseLeave={(e) => isMobile && ((e.currentTarget as HTMLElement).style.animationPlayState = "running")}
+                  >
+                    {(isMobile ? [...painItems, ...painItems] : painItems).map((item, i) => {
+                      const Icon = item.icon;
+                      const used = usedPresets.has(item.id);
+                      return (
+                        <span key={`${item.id}-${i}`} className="relative shrink-0">
+                          <motion.button
+                            onClick={() => addPreset(item)}
+                            disabled={used || canvas.length >= 8}
+                            whileHover={{ scale: used ? 1 : 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={`flex min-h-11 items-center gap-2 rounded-lg border px-4 py-3 text-sm font-medium transition-all ${
+                              used
+                                ? `${item.color} cursor-default ring-2 ring-current/40`
+                                : `${item.color} cursor-pointer hover:shadow-md`
+                            }`}
+                          >
+                            {used ? (
+                              <HiOutlineCheckCircle className="h-4 w-4 shrink-0" />
+                            ) : (
+                              <Icon className="h-4 w-4 shrink-0" />
+                            )}
+                            {item.label}
+                          </motion.button>
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
@@ -234,36 +246,42 @@ export default function IdeaPlayground() {
                 <p className="mb-2.5 text-sm font-medium uppercase tracking-wider text-primary/70">
                   Wishes
                 </p>
-                <div className="flex flex-wrap gap-2.5">
-                  {wishItems.map((item) => {
-                    const Icon = item.icon;
-                    const used = usedPresets.has(item.id);
-                    const isHighlighted = canvas.length === 0 && PRESET_ITEMS[highlightIndex]?.id === item.id;
-                    return (
-                      <span key={item.id} className="relative">
-                        <motion.button
-                          onClick={() => addPreset(item)}
-                          disabled={used || canvas.length >= 8}
-                          whileHover={{ scale: used ? 1 : 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          animate={
-                            isHighlighted
-                              ? { scale: [1, 1.08, 1], boxShadow: ["0 0 0px transparent", "0 0 12px rgba(0,208,132,0.3)", "0 0 0px transparent"] }
-                              : {}
-                          }
-                          transition={isHighlighted ? { duration: 0.8 } : { duration: 0.2 }}
-                          className={`flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
-                            used
-                              ? "cursor-not-allowed border-border/20 bg-surface/20 text-text-muted/30 opacity-50"
-                              : `${item.color} cursor-pointer hover:shadow-md`
-                          }`}
-                        >
-                          <Icon className="h-4 w-4" />
-                          {item.label}
-                        </motion.button>
-                      </span>
-                    );
-                  })}
+                <div className="relative overflow-hidden">
+                  <div className="pointer-events-none absolute left-0 top-0 bottom-1 z-10 w-6 bg-gradient-to-r from-background to-transparent lg:hidden" />
+                  <div className="pointer-events-none absolute right-0 top-0 bottom-1 z-10 w-12 bg-gradient-to-l from-background to-transparent lg:hidden" />
+                  <div
+                    className="flex gap-2 pb-1 lg:flex-wrap"
+                    style={isMobile ? { animation: "marquee 22s linear infinite" } : {}}
+                    onMouseEnter={(e) => isMobile && ((e.currentTarget as HTMLElement).style.animationPlayState = "paused")}
+                    onMouseLeave={(e) => isMobile && ((e.currentTarget as HTMLElement).style.animationPlayState = "running")}
+                  >
+                    {(isMobile ? [...wishItems, ...wishItems] : wishItems).map((item, i) => {
+                      const Icon = item.icon;
+                      const used = usedPresets.has(item.id);
+                      return (
+                        <span key={`${item.id}-${i}`} className="relative shrink-0">
+                          <motion.button
+                            onClick={() => addPreset(item)}
+                            disabled={used || canvas.length >= 8}
+                            whileHover={{ scale: used ? 1 : 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={`flex min-h-11 items-center gap-2 rounded-lg border px-4 py-3 text-sm font-medium transition-all ${
+                              used
+                                ? `${item.color} cursor-default ring-2 ring-current/40`
+                                : `${item.color} cursor-pointer hover:shadow-md`
+                            }`}
+                          >
+                            {used ? (
+                              <HiOutlineCheckCircle className="h-4 w-4 shrink-0" />
+                            ) : (
+                              <Icon className="h-4 w-4 shrink-0" />
+                            )}
+                            {item.label}
+                          </motion.button>
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
@@ -311,7 +329,7 @@ export default function IdeaPlayground() {
               ? "border-primary/40 bg-primary/5 shadow-[0_0_60px_rgba(0,208,132,0.12)]"
               : building
                 ? "border-accent/40 bg-accent/5"
-                : "border-border/40 bg-surface/30"
+                : "border-border-light bg-surface/30"
           }`}
         >
           {canvas.length === 0 && !building && !completed && (
@@ -365,7 +383,7 @@ export default function IdeaPlayground() {
 
           {/* Canvas items */}
           {!building && !completed && (
-            <div className="flex flex-wrap justify-center gap-2.5">
+            <div className="flex flex-col gap-2">
               <AnimatePresence mode="popLayout">
                 {canvas.map((item) => {
                   const Icon = item.icon;
@@ -377,13 +395,13 @@ export default function IdeaPlayground() {
                       animate={{ opacity: 1, scale: 1, rotate: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
                       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                      className={`group relative flex items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-medium ${item.color}`}
+                      className={`group relative flex w-full items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-medium ${item.color}`}
                     >
                       {Icon && <Icon className="h-3.5 w-3.5" />}
                       {item.label}
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="ml-1 rounded-full p-0.5 opacity-0 transition-opacity group-hover:opacity-100"
+                        className="ml-auto rounded-full p-0.5 opacity-50 transition-opacity hover:opacity-100"
                       >
                         <HiOutlineXMark className="h-3 w-3" />
                       </button>
@@ -440,7 +458,7 @@ export default function IdeaPlayground() {
                   className="flex items-center gap-1.5 text-xs text-text-muted transition-colors hover:text-primary"
                 >
                   <HiOutlineArrowPath className="h-3 w-3" />
-                  Play Again
+                  Start Over
                 </button>
               </div>
             </motion.div>

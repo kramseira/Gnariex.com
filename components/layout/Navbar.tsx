@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
+import { HiOutlineBars3, HiOutlineXMark, HiOutlineLockClosed } from "react-icons/hi2";
 import { navLinks } from "@/lib/data";
 import Button from "@/components/ui/Button";
 import GradientLogo from "@/components/ui/GradientLogo";
@@ -56,7 +56,18 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-3 md:flex">
+          <Link
+            href="/portal"
+            className={`flex items-center gap-1.5 text-sm font-medium transition-colors duration-200 ${
+              pathname === "/portal"
+                ? "text-primary"
+                : "text-text-secondary hover:text-text-primary"
+            }`}
+          >
+            <HiOutlineLockClosed className="h-3.5 w-3.5" />
+            Client Login
+          </Link>
           <Button href="/contact" variant="primary" size="sm">
             Get Started
           </Button>
@@ -65,7 +76,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-text-primary md:hidden"
+          className="flex h-11 w-11 items-center justify-center text-text-primary md:hidden"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -86,7 +97,7 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="overflow-hidden border-t border-border md:hidden"
           >
-            <div className="glass px-4 py-4 space-y-3">
+            <div className="bg-background px-4 py-4 space-y-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -100,7 +111,18 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2">
+              <div className="space-y-2 pt-2">
+                <Link
+                  href="/portal"
+                  className={`flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors ${
+                    pathname === "/portal"
+                      ? "border-primary/30 bg-primary/10 text-primary"
+                      : "border-border text-text-secondary hover:border-border-light hover:text-text-primary"
+                  }`}
+                >
+                  <HiOutlineLockClosed className="h-4 w-4" />
+                  Client Login
+                </Link>
                 <Button href="/contact" variant="primary" size="sm" className="w-full">
                   Get Started
                 </Button>

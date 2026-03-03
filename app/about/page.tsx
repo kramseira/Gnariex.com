@@ -58,6 +58,10 @@ export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute -left-40 -top-32 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
+        <div className="pointer-events-none absolute -right-40 top-0 h-80 w-80 rounded-full bg-secondary/8 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/6 blur-3xl" />
       <SectionWrapper>
         <div className="mx-auto max-w-3xl text-center">
           <motion.div
@@ -79,6 +83,7 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </SectionWrapper>
+      </div>
 
       {/* Mission & Vision */}
       <SectionWrapper className="bg-surface/30">
@@ -123,7 +128,7 @@ export default function AboutPage() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <GlassCard className="h-full">
-                <h3 className="text-lg font-semibold text-primary">
+                <h3 className="text-lg font-semibold text-text-primary">
                   {value.title}
                 </h3>
                 <p className="mt-2 text-sm text-text-secondary leading-relaxed">

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HiOutlineArrowLeft, HiOutlineClock, HiOutlineCalendar } from "react-icons/hi2";
@@ -13,6 +14,26 @@ export function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: [post.category, "Papua New Guinea tech", "PNG IT blog", "Gnariex blog"],
+    alternates: { canonical: `https://gnariex.com/blog/${post.slug}` },
+    openGraph: {
+      title:       post.title,
+      description: post.excerpt,
+      url:         `https://gnariex.com/blog/${post.slug}`,
+      type:        "article",
+      publishedTime: post.date,
+      tags:        [post.category, "Papua New Guinea", "Technology"],
+    },
+  };
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
@@ -22,8 +43,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="pt-20">
-      <article className="mx-auto max-w-3xl px-4 py-12 sm:py-20 md:px-8">
+    <div className="relative pt-20">
+      <div className="pointer-events-none absolute -left-40 -top-32 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 top-0 h-80 w-80 rounded-full bg-secondary/8 blur-3xl" />
+      <article className="relative mx-auto max-w-3xl px-4 py-12 sm:py-20 md:px-8">
         {/* Back link */}
         <Link
           href="/blog"
@@ -52,7 +75,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               })}
             </span>
           </div>
-          <h1 className="mt-6 text-2xl font-bold leading-tight sm:text-3xl md:text-5xl font-[family-name:var(--font-display)]">
+          <h1 className="mt-6 font-display text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
             {post.title}
           </h1>
           <p className="mt-4 text-base text-text-secondary sm:text-lg">{post.excerpt}</p>

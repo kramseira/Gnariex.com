@@ -118,7 +118,7 @@ export default function TechStack() {
   const active = IMPACTS.find((i) => i.id === activeId)!;
 
   return (
-    <SectionWrapper id="business-impact">
+    <SectionWrapper id="business-impact" className="pb-8 lg:pb-10">
       <div className="mb-12 text-center">
         <span className="text-sm font-medium uppercase tracking-wider text-primary">
           Why It Matters
@@ -142,7 +142,7 @@ export default function TechStack() {
               <button
                 key={item.id}
                 onClick={() => setActiveId(item.id)}
-                className={`flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all duration-200 ${
+                className={`flex min-h-11 items-center gap-1.5 rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-200 ${
                   isActive
                     ? "border-transparent bg-white/10 text-white"
                     : "border-white/8 text-text-muted hover:border-white/15 hover:text-text-secondary"
