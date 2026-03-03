@@ -11,8 +11,8 @@ const MAX_REQUESTS = 80;    // requests per window per IP
 // ─── Bot signature blocklist ──────────────────────────────────────────────────
 const BLOCKED_UA = /sqlmap|nikto|masscan|zgrab|nmap|dirbuster|gobuster|hydra|nessus|openvas|w3af|wfuzz|nuclei/i;
 
-// ─── Middleware ───────────────────────────────────────────────────────────────
-export function middleware(req: NextRequest) {
+// ─── Proxy ────────────────────────────────────────────────────────────────────
+export function proxy(req: NextRequest) {
   // 1. Block known attack-tool user-agents
   const ua = req.headers.get("user-agent") ?? "";
   if (BLOCKED_UA.test(ua)) {
