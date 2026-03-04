@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import GradientText from "@/components/ui/GradientText";
@@ -30,7 +31,7 @@ export default function Services() {
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => {
           const accent = ACCENT_COLORS[index % ACCENT_COLORS.length];
           const Icon = service.icon;
@@ -42,7 +43,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.07 }}
-              className="group relative overflow-hidden rounded-xl border border-white/6 bg-white/3 p-4 backdrop-blur-sm transition-all duration-300 hover:border-white/12 hover:bg-white/5"
+              className="group relative overflow-hidden rounded-2xl border border-white/6 bg-white/3 backdrop-blur-sm transition-all duration-300 hover:border-white/12 hover:bg-white/5"
               style={{
                 boxShadow: `inset 0 1px 0 rgba(255,255,255,0.04)`,
               }}
@@ -56,37 +57,52 @@ export default function Services() {
                 style={{ backgroundColor: accent.glow.replace("0.4", "0.15") }}
               />
 
-              {/* Icon + Title row */}
-              <div className="flex items-start gap-3">
+              {/* Image */}
+              <div className="relative h-36 w-full overflow-hidden sm:h-40">
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-background via-background/30 to-transparent" />
+
+                {/* Icon badge on image */}
                 <div
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-shadow duration-300"
+                  className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl shadow-lg transition-shadow duration-300"
                   style={{
-                    backgroundColor: accent.glow.replace("0.4", "0.08"),
+                    backgroundColor: accent.glow.replace("0.4", "0.15"),
                     color: accent.glow.replace("0.4)", "1)"),
+                    backdropFilter: "blur(8px)",
                   }}
                 >
-                  <Icon className="h-4.5 w-4.5" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-sm font-semibold text-text-primary">
-                    {service.title}
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-text-muted line-clamp-2">
-                    {service.description}
-                  </p>
+                  <Icon className="h-5 w-5" />
                 </div>
               </div>
 
-              {/* Feature tags */}
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {service.features.map((feature) => (
-                  <span
-                    key={feature}
-                    className="rounded-md border border-white/6 bg-white/3 px-2 py-0.5 text-[10px] font-medium text-text-muted transition-colors group-hover:border-white/10 group-hover:text-text-secondary"
-                  >
-                    {feature}
-                  </span>
-                ))}
+              {/* Content */}
+              <div className="space-y-3 p-5">
+                <div>
+                  <h3 className="text-base font-semibold text-text-primary">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-muted line-clamp-2">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Feature tags */}
+                <div className="flex flex-wrap gap-1.5">
+                  {service.features.map((feature) => (
+                    <span
+                      key={feature}
+                      className="rounded-md border border-white/6 bg-white/3 px-2.5 py-0.5 text-[11px] font-medium text-text-muted transition-colors group-hover:border-white/10 group-hover:text-text-secondary"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           );

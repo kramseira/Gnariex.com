@@ -7,6 +7,15 @@ import GradientText from "@/components/ui/GradientText";
 import Button from "@/components/ui/Button";
 import { services } from "@/lib/data";
 
+const ACCENT_COLORS = [
+  "rgba(0,208,132,0.4)",
+  "rgba(6,147,227,0.4)",
+  "rgba(168,85,247,0.4)",
+  "rgba(249,115,22,0.4)",
+  "rgba(6,147,227,0.4)",
+  "rgba(0,208,132,0.4)",
+];
+
 export default function ServicesPage() {
   return (
     <div className="pt-20">
@@ -14,7 +23,6 @@ export default function ServicesPage() {
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute -left-40 -top-32 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
         <div className="pointer-events-none absolute -right-40 top-0 h-80 w-80 rounded-full bg-secondary/8 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/6 blur-3xl" />
         <SectionWrapper>
           <div className="mx-auto max-w-3xl text-center">
             <motion.div
@@ -37,65 +45,86 @@ export default function ServicesPage() {
         </SectionWrapper>
       </div>
 
-      {/* Services Detail */}
-      <SectionWrapper className="bg-surface/30">
-        <div className="space-y-12 sm:space-y-16">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className={`grid items-center gap-8 md:gap-12 lg:grid-cols-2 ${
-                index % 2 !== 0 ? "lg:direction-rtl" : ""
-              }`}
-            >
-              <div className={index % 2 !== 0 ? "lg:order-2" : ""}>
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <service.icon className="h-7 w-7" />
-                </div>
-                <h2 className="text-2xl font-bold md:text-3xl font-[family-name:var(--font-display)]">
-                  {service.title}
-                </h2>
-                <p className="mt-4 text-text-secondary leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="mt-6 grid grid-cols-2 gap-3">
-                  {service.features.map((feature) => (
-                    <div
-                      key={feature}
-                      className="flex items-center gap-2 text-sm text-text-secondary"
-                    >
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              </div>
+      {/* Services Grid */}
+      <SectionWrapper>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            const accent = ACCENT_COLORS[index % ACCENT_COLORS.length];
 
-              <div className={index % 2 !== 0 ? "lg:order-1" : ""}>
-                <div className="relative overflow-hidden rounded-2xl border border-border bg-surface">
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-surface/40 transition-all duration-300 hover:border-border-light hover:bg-surface/60"
+                style={{
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
+                }}
+              >
+                {/* Image */}
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
-                    width={800}
-                    height={500}
-                    className="h-72 w-full object-cover lg:h-80"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-surface via-surface/30 to-transparent" />
+
+                  {/* Icon badge */}
+                  <div
+                    className="absolute bottom-4 left-5 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 shadow-lg backdrop-blur-md"
+                    style={{
+                      backgroundColor: accent.replace("0.4", "0.15"),
+                      color: accent.replace("0.4)", "1)"),
+                    }}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                {/* Content */}
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-xl font-bold text-text-primary font-display">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-text-secondary">
+                    {service.description}
+                  </p>
+
+                  {/* Features */}
+                  <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2.5 border-t border-border/40 pt-5">
+                    {service.features.map((feature) => (
+                      <div
+                        key={feature}
+                        className="flex items-center gap-2.5 text-[13px] text-text-muted transition-colors group-hover:text-text-secondary"
+                      >
+                        <span
+                          className="h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ backgroundColor: accent.replace("0.4)", "0.8)") }}
+                        />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom gradient line on hover */}
+                <div className="h-px w-0 bg-linear-to-r from-primary via-secondary to-accent transition-all duration-500 group-hover:w-full" />
+              </motion.div>
+            );
+          })}
         </div>
       </SectionWrapper>
 
       {/* CTA */}
       <SectionWrapper>
         <div className="text-center">
-          <h2 className="text-3xl font-bold md:text-4xl font-[family-name:var(--font-display)]">
+          <h2 className="text-3xl font-bold md:text-4xl font-display">
             Ready to get <GradientText>started</GradientText>?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-text-secondary">
