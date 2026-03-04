@@ -100,11 +100,11 @@ export const techStack = [
 
 export const portfolio = [
   {
-    title: "CloudVault Pro",
+    title: "Cloud Storage Platform",
     description:
-      "Enterprise cloud storage platform with advanced encryption, team collaboration, and real-time sync across devices.",
+      "Enterprise cloud storage with end-to-end encryption, team collaboration, and real-time sync across all devices.",
     longDescription:
-      "CloudVault Pro is a secure, enterprise-grade cloud storage and collaboration platform built for mid-to-large organizations. It features end-to-end encryption, granular permission controls, and seamless real-time file sync. Teams can collaborate on documents, manage version history, and set automated backup schedules — all from a unified dashboard.",
+      "A secure, enterprise-grade cloud storage and collaboration platform designed for mid-to-large organizations. Features include end-to-end encryption, granular permission controls, and seamless real-time file sync. Teams can collaborate on documents, manage version history, and set automated backup schedules — all from a unified dashboard.",
     tags: ["Next.js", "AWS", "TypeScript"],
     category: "Cloud System",
     color: "from-primary/20 to-secondary/20",
@@ -112,127 +112,195 @@ export const portfolio = [
     imageAlt: "Server infrastructure for cloud platform",
     metrics: [
       { label: "Uptime", value: "99.99%" },
-      { label: "Files Synced Daily", value: "2M+" },
-      { label: "Storage Managed", value: "50TB" },
+      { label: "File Sync", value: "Real-time" },
+      { label: "Encryption", value: "End-to-end" },
     ],
   },
   {
-    title: "MediTrack Dashboard",
+    title: "Healthcare Admin Dashboard",
     description:
-      "Healthcare admin dashboard with patient management, appointment scheduling, and HIPAA-compliant data handling.",
+      "HIPAA-compliant admin dashboard with patient management, appointment scheduling, and secure data handling.",
     longDescription:
-      "MediTrack is a HIPAA-compliant admin dashboard built for healthcare providers. It centralizes patient records, appointment calendars, and billing workflows into a single interface. The system includes role-based access for doctors, nurses, and admin staff, with a full audit trail on all sensitive data operations.",
+      "A HIPAA-compliant admin dashboard designed for healthcare providers. It centralizes patient records, appointment calendars, and billing workflows into a single interface. The system includes role-based access for doctors, nurses, and admin staff, with a full audit trail on all sensitive data operations.",
     tags: ["React", "Node.js", "PostgreSQL"],
     category: "Admin Dashboard",
     color: "from-secondary/20 to-accent/20",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Healthcare dashboard on tablet and desktop",
     metrics: [
-      { label: "Patients Managed", value: "12K+" },
-      { label: "Avg. Load Time", value: "0.8s" },
+      { label: "Compliance", value: "HIPAA" },
+      { label: "Load Time", value: "<1s" },
       { label: "Data Accuracy", value: "99.7%" },
     ],
   },
   {
-    title: "FinanceHub Portal",
+    title: "Financial Client Portal",
     description:
       "Client-facing financial portal with real-time portfolio tracking, secure document exchange, and automated reporting.",
     longDescription:
-      "FinanceHub is a white-label client portal for financial advisory firms. Clients log in to view live portfolio performance, exchange encrypted documents, and download automated monthly reports. Advisors get a back-office panel with CRM tools, compliance tracking, and customizable report templates.",
+      "A white-label client portal designed for financial advisory firms. Clients can view live portfolio performance, exchange encrypted documents, and download automated monthly reports. Advisors get a back-office panel with CRM tools, compliance tracking, and customizable report templates.",
     tags: ["Next.js", "GraphQL", "MongoDB"],
     category: "Client Portal",
     color: "from-accent/20 to-primary/20",
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Financial analytics dashboard with charts",
     metrics: [
-      { label: "AUM Tracked", value: "$200M+" },
-      { label: "Client Satisfaction", value: "+40%" },
-      { label: "Report Generation", value: "Automated" },
+      { label: "Security", value: "Bank-grade" },
+      { label: "Reporting", value: "Automated" },
+      { label: "White-label", value: "Fully Custom" },
     ],
   },
   {
-    title: "ShopStream",
+    title: "E-Commerce Platform",
     description:
-      "High-performance e-commerce platform handling 10K+ concurrent users with real-time inventory and AI-powered recommendations.",
+      "High-performance e-commerce platform supporting 10K+ concurrent users with real-time inventory and AI-powered recommendations.",
     longDescription:
-      "ShopStream is a headless e-commerce platform engineered for scale. Built to handle flash-sale traffic spikes with 10K+ concurrent users, it features a Redis-backed inventory engine, AI-driven product recommendations, and a real-time order management system. The storefront achieves a Lighthouse score of 98.",
+      "A headless e-commerce platform engineered for scale. Designed to handle flash-sale traffic spikes with 10K+ concurrent users, it features a Redis-backed inventory engine, AI-driven product recommendations, and a real-time order management system. Optimized for top-tier performance and conversion.",
     tags: ["React", "Python", "Redis"],
     category: "Web Application",
     color: "from-primary/20 to-accent/20",
     image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "E-commerce storefront on desktop and mobile",
     metrics: [
-      { label: "Concurrent Users", value: "10K+" },
-      { label: "Lighthouse Score", value: "98" },
-      { label: "Conversion Lift", value: "+28%" },
+      { label: "Concurrency", value: "10K+ users" },
+      { label: "Performance", value: "98 Lighthouse" },
+      { label: "Page Speed", value: "<1s" },
     ],
   },
   {
-    title: "FleetTrack",
+    title: "Fleet Management System",
     description:
-      "Vehicle and fleet management system with real-time GPS tracking, maintenance scheduling, driver logs, and fuel cost reporting.",
+      "Vehicle and fleet management system with real-time GPS tracking, maintenance scheduling, driver logs, and cost analytics.",
     longDescription:
-      "FleetTrack is a comprehensive vehicle management platform built for transport companies, logistics providers, and government fleets. It delivers live GPS tracking on an interactive map, automated maintenance reminders, digital driver logbooks, and detailed fuel and cost analytics. Dispatchers can assign routes, monitor driver behavior, and generate compliance reports — all from a single web-based console.",
+      "A comprehensive vehicle management platform designed for transport companies, logistics providers, and government fleets. Features include live GPS tracking on an interactive map, automated maintenance reminders, digital driver logbooks, and detailed fuel and cost analytics. Dispatchers can assign routes, monitor driver behavior, and generate compliance reports — all from a single web-based console.",
     tags: ["React", "Node.js", "PostgreSQL", "Mapbox"],
     category: "Fleet Management",
     color: "from-primary/20 to-secondary/20",
     image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Fleet of vehicles managed via web dashboard",
     metrics: [
-      { label: "Vehicles Tracked", value: "500+" },
-      { label: "Fuel Cost Saved", value: "30%" },
-      { label: "Route Efficiency", value: "+42%" },
+      { label: "Tracking", value: "Real-time GPS" },
+      { label: "Cost Savings", value: "Up to 30%" },
+      { label: "Optimization", value: "AI-powered" },
     ],
   },
   {
-    title: "BookEase Suite",
+    title: "Booking & Accounting Suite",
     description:
-      "Integrated booking and accounting web app with calendar scheduling, invoice generation, payment tracking, and financial reporting.",
+      "Integrated booking and accounting platform with calendar scheduling, invoice generation, payment tracking, and financial reporting.",
     longDescription:
-      "BookEase Suite combines a full-featured appointment booking system with a built-in accounting engine, eliminating the need for separate tools. Businesses can manage client bookings, send automated reminders, generate professional invoices, track receivables and payables, and produce profit & loss statements — all within one platform. Role-based access supports front-desk staff, accountants, and management with tailored views.",
+      "A full-featured appointment booking system combined with a built-in accounting engine, eliminating the need for separate tools. Businesses can manage client bookings, send automated reminders, generate professional invoices, track receivables and payables, and produce profit & loss statements — all within one platform. Role-based access supports front-desk staff, accountants, and management with tailored views.",
     tags: ["Next.js", "Prisma", "Stripe", "PostgreSQL"],
     category: "Web Application",
     color: "from-secondary/20 to-accent/20",
     image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Booking calendar and accounting dashboard interface",
     metrics: [
-      { label: "Bookings Processed", value: "8K+/mo" },
-      { label: "Invoice Accuracy", value: "100%" },
-      { label: "Admin Time Saved", value: "15hrs/wk" },
+      { label: "Scheduling", value: "Automated" },
+      { label: "Invoicing", value: "100% Accurate" },
+      { label: "Time Saved", value: "15+ hrs/wk" },
     ],
   },
   {
-    title: "NexaERP",
+    title: "Enterprise Resource Planner",
     description:
-      "Enterprise resource planning system covering inventory, procurement, HR, payroll, and financial management for mid-size businesses.",
+      "Modular ERP system covering inventory, procurement, HR, payroll, and financial management for mid-size businesses.",
     longDescription:
-      "NexaERP is a modular enterprise resource planning platform designed for growing mid-size businesses in Papua New Guinea and the Pacific region. Modules include inventory and warehouse management, purchase orders and supplier management, HR and payroll with leave tracking, general ledger and financial reporting, and a management dashboard with live KPIs. The system integrates with local banking APIs and supports multi-currency and multi-branch operations.",
+      "A modular enterprise resource planning platform designed for growing mid-size businesses. Modules include inventory and warehouse management, purchase orders and supplier management, HR and payroll with leave tracking, general ledger and financial reporting, and a management dashboard with live KPIs. Supports multi-currency and multi-branch operations with banking API integrations.",
     tags: ["React", "Python", "Django", "PostgreSQL"],
     category: "ERP System",
     color: "from-accent/20 to-primary/20",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "ERP business analytics and resource planning dashboard",
     metrics: [
-      { label: "Modules Integrated", value: "8" },
-      { label: "Processing Time", value: "-60%" },
+      { label: "Modules", value: "8 Integrated" },
+      { label: "Processing", value: "60% Faster" },
       { label: "Data Accuracy", value: "99.5%" },
     ],
   },
   {
-    title: "CivicConnect Portal",
+    title: "Government Services Portal",
     description:
-      "Community and government service portal enabling citizens to submit requests, track applications, and access public services online.",
+      "Citizen-facing digital services portal for submitting requests, tracking applications, and accessing public services online.",
     longDescription:
-      "CivicConnect is a citizen-facing digital services portal that bridges residents and local government institutions. Citizens can register, submit service requests (permits, utilities, complaints), upload supporting documents, and track real-time application status. Government staff get a back-office workflow manager with automated routing, SLA tracking, and a reporting suite. Designed with accessibility and low-bandwidth environments in mind for regional PNG use.",
+      "A citizen-facing digital services portal that bridges residents and local government institutions. Citizens can register, submit service requests (permits, utilities, complaints), upload supporting documents, and track real-time application status. Government staff get a back-office workflow manager with automated routing, SLA tracking, and a reporting suite. Designed with accessibility and low-bandwidth environments in mind.",
     tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
     category: "Gov Portal",
     color: "from-primary/20 to-accent/20",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Government community service portal on desktop",
     metrics: [
-      { label: "Service Requests", value: "3K+/mo" },
-      { label: "Resolution Time", value: "-45%" },
-      { label: "Citizen Rating", value: "4.8/5" },
+      { label: "Scalability", value: "Unlimited" },
+      { label: "Response", value: "45% Faster" },
+      { label: "Accessibility", value: "WCAG 2.1" },
+    ],
+  },
+  {
+    title: "Hotel Management Platform",
+    description:
+      "Full-stack hotel management and guest booking platform with real-time availability, dynamic pricing, and digital concierge.",
+    longDescription:
+      "A full-stack hotel management system designed for boutique and mid-range properties. Guests can browse rooms, view live availability, and book directly with instant confirmation. The back-office dashboard manages reservations, housekeeping schedules, room service orders, and guest profiles. Dynamic pricing adjusts rates based on demand, seasonality, and occupancy. Also features a digital concierge for guests to request amenities, late checkout, or local recommendations.",
+    tags: ["Next.js", "Prisma", "Stripe", "PostgreSQL"],
+    category: "Hospitality",
+    color: "from-accent/20 to-secondary/20",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Modern hotel lobby with digital check-in kiosk",
+    metrics: [
+      { label: "Booking", value: "Instant" },
+      { label: "Pricing", value: "Dynamic" },
+      { label: "Concierge", value: "Built-in" },
+    ],
+  },
+  {
+    title: "Task Management App",
+    description:
+      "Collaborative task management app with Kanban boards, time tracking, priority tagging, and team workload analytics.",
+    longDescription:
+      "A team productivity platform that replaces scattered spreadsheets and sticky notes with a structured, real-time task system. Features include drag-and-drop Kanban boards, custom workflows per project, recurring task automation, time tracking with timesheets, file attachments, and workload heatmaps so managers can balance assignments. Notifications keep everyone aligned, and a reporting dashboard tracks velocity, completion rates, and bottlenecks across sprints.",
+    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
+    category: "Productivity",
+    color: "from-secondary/20 to-primary/20",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Kanban task board with team collaboration",
+    metrics: [
+      { label: "Collaboration", value: "Real-time" },
+      { label: "Workflows", value: "Fully Custom" },
+      { label: "Integrations", value: "20+" },
+    ],
+  },
+  {
+    title: "Project Management Suite",
+    description:
+      "Project management platform with Gantt charts, resource allocation, budget tracking, and client-facing progress dashboards.",
+    longDescription:
+      "A project management suite designed for agencies, construction firms, and IT companies managing multiple concurrent projects. Features include interactive Gantt charts with dependency linking, resource allocation with conflict detection, milestone tracking, budget vs. actual cost analysis, and risk registers. Clients get a read-only portal to view progress, approve deliverables, and leave feedback — keeping stakeholders aligned without access to internal data.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Redis"],
+    category: "Project Management",
+    color: "from-primary/20 to-accent/20",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Project Gantt chart and resource dashboard",
+    metrics: [
+      { label: "Capacity", value: "Unlimited" },
+      { label: "Tracking", value: "Real-time" },
+      { label: "Budget Control", value: "Precise" },
+    ],
+  },
+  {
+    title: "Car Booking Platform",
+    description:
+      "Ride-hailing and car booking platform with web and mobile apps for scheduling, driver matching, fare estimation, and trip tracking.",
+    longDescription:
+      "A ride-hailing and car booking platform designed for regional transport operators. Passengers book rides via web or mobile app with upfront fare estimates, real-time driver matching, and live trip tracking on a map. Drivers use a companion app to accept rides, navigate routes, and manage earnings. The admin dashboard handles fleet oversight, driver verification, pricing zones, promo codes, and analytics. Supports both on-demand rides and scheduled bookings with multi-payment options.",
+    tags: ["React Native", "Node.js", "PostgreSQL", "Mapbox"],
+    category: "Web & Mobile",
+    color: "from-secondary/20 to-accent/20",
+    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Car booking app on mobile with map and ride tracking",
+    metrics: [
+      { label: "Matching", value: "Instant" },
+      { label: "GPS Tracking", value: "Real-time" },
+      { label: "Payments", value: "Multi-option" },
     ],
   },
 ];

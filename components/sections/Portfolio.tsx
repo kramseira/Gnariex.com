@@ -50,56 +50,65 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.35, delay: index * 0.06 }}
             >
               <button
                 onClick={() => setSelected(project)}
-                className="glass glow-hover group relative w-full cursor-pointer overflow-hidden rounded-xl text-left"
+                className="group relative w-full cursor-pointer overflow-hidden rounded-2xl border border-border/60 bg-surface/40 text-left transition-all duration-300 hover:border-border-light hover:bg-surface/70 hover:shadow-[0_0_24px_-6px_rgba(0,208,132,0.12)]"
               >
-                {/* Project image */}
-                <div className="relative h-36 w-full overflow-hidden">
+                {/* Image */}
+                <div className="relative h-32 w-full overflow-hidden sm:h-36">
                   <Image
                     src={project.image}
                     alt={project.imageAlt}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-surface/90 via-surface/30 to-transparent" />
-                  {/* Gradient color overlay on hover */}
-                  <div
-                    className={`pointer-events-none absolute inset-0 bg-linear-to-br ${project.color} opacity-0 transition-opacity duration-300 group-hover:opacity-60`}
-                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-surface/90 via-surface/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 h-px w-12 bg-linear-to-r from-primary via-secondary to-accent opacity-50 transition-all duration-300 group-hover:w-full group-hover:opacity-100" />
                 </div>
 
-                <div className="relative z-10 p-4">
-                  <span className="inline-block rounded-md bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-                    {project.category}
-                  </span>
-                  <h3 className="mt-2 text-base font-bold">{project.title}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-text-secondary line-clamp-2">
-                    {project.description}
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
+                <div className="space-y-3 p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <span className="text-[11px] font-medium uppercase tracking-wider text-text-muted">
+                        {project.category}
+                      </span>
+                      <h3 className="mt-1.5 text-base font-semibold leading-snug text-text-primary transition-colors group-hover:text-white">
+                        {project.title}
+                      </h3>
+                      <p className="mt-2 text-xs leading-relaxed text-text-secondary line-clamp-2">
+                        {project.description}
+                      </p>
+                    </div>
+                    <span className="mt-1.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/8 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      <HiArrowTopRightOnSquare className="h-3.5 w-3.5" />
+                    </span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md border border-border bg-surface px-2.5 py-1 text-xs text-text-muted"
+                        className="rounded-full bg-white/4 px-2.5 py-1 text-[11px] text-text-muted"
                       >
                         {tag}
                       </span>
                     ))}
+                    {project.tags.length > 3 && (
+                      <span className="rounded-full bg-white/4 px-2.5 py-1 text-[11px] text-text-muted">
+                        +{project.tags.length - 3}
+                      </span>
+                    )}
                   </div>
-                  <p className="mt-3 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                    Click to view details →
-                  </p>
                 </div>
               </button>
             </motion.div>
